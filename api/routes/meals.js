@@ -18,12 +18,12 @@ router.post('/',(req, res) =>{
 })
 router.put('/:id',(req, res) =>{
     Meals.findOneAndUpdate(req.params.id, req.body)
-        .then(x => res.status(204))
+        .then(() => res.sendStatus(204))
 })
 router.delete('/:id',(req, res) =>{
     Meals.findOneAndDelete(req.params.id)
         .exec()
-        .then(x => res.status(204))
+        .then(() => res.sendStatus(204))
 })
 
 module.exports = router;
